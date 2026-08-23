@@ -16,36 +16,66 @@ const RegisterPage = () => {
     e.preventDefault();
     axios.get('http://localhost:3001/users?email=' + email)
       .then(res => {
-        if (res.data.length > 0) setError('Email da duoc su dung!');
-        else return axios.post('http://localhost:3001/users', { name, email, password });
+        if (res.data.length > 0) {
+          setError('Email nay da duoc su dung!');
+        } else {
+          return axios.post('http://localhost:3001/users', { name, email, password, role: 'user' });
+        }
       })
       .then(res => {
-        if (res && res.data) { login(res.data); alert('Dang ky thanh cong!'); navigate('/'); }
+        if (res && res.data) {
+          login(res.data);
+          alert('Dang ky thanh cong!');
+          navigate('/');
+        }
       })
       .catch(() => setError('Da co loi xay ra!'));
   };
 
   return (
     <Container className="py-5" style={{ maxWidth: '420px' }}>
-      <Card className="bg-dark-card border-0 rounded-3 p-4">
-        <h3 className="fw-bold text-warning text-center mb-4">Dang Ky</h3>
+      <Card className="card-dark p-4">
+        <h3 className="text-warning text-center fw-bold mb-4">Dang Ky</h3>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label className="text-light">Ho va Ten</Form.Label>
-            <Form.Control type="text" placeholder="Nguyen Van A" value={name} onChange={(e) => setName(e.target.value)} required className="bg-dark text-white border-secondary" />
+            <Form.Label className="text-white fw-bold">Ho va Ten</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Nhap ho ten cua ban"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              className="bg-dark text-white border-secondary"
+            />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label className="text-light">Email</Form.Label>
-            <Form.Control type="email" placeholder="user@example.com" value={email} onChange={(e) => setEmail(e.target.value)} required className="bg-dark text-white border-secondary" />
+            <Form.Label className="text-white fw-bold">Email</Form.Label>
+            <Form.Control
+              type="email"
+              placeholder="Nhap email cua ban"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="bg-dark text-white border-secondary"
+            />
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label className="text-light">Mat khau</Form.Label>
-            <Form.Control type="password" placeholder="******" value={password} onChange={(e) => setPassword(e.target.value)} required className="bg-dark text-white border-secondary" />
+            <Form.Label className="text-white fw-bold">Mat khau</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Nhap mat khau"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="bg-dark text-white border-secondary"
+            />
           </Form.Group>
-          <Button type="submit" variant="warning" className="w-100 py-2 fw-bold text-dark mb-3">Tao Tai Khoan</Button>
+          <Button type="submit" variant="warning" className="w-100 py-2 mb-3">
+            Tao Tai Khoan
+          </Button>
           <div className="text-center small text-secondary">
-            Da co tai khoan? <Link to="/login" className="text-warning text-decoration-none fw-bold">Dang nhap</Link>
+            Da co tai khoan? <Link to="/login" className="text-warning fw-bold text-decoration-none">Dang nhap</Link>
           </div>
         </Form>
       </Card>

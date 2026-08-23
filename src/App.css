@@ -90,3 +90,15 @@ body {
   color: #fff !important;
   border-radius: 6px !important;
 }
+
+::placeholder {
+  color: #888888 !important;
+  opacity: 1;
+}
+
+.form-control:focus {
+  background-color: #2b2b2b !important;
+  color: #fff !important;
+  border-color: #f5c518 !important;
+  box-shadow: none !important;
+}
