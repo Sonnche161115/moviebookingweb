@@ -1,0 +1,421 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "The Shawshank Redemption",
+      "poster": "https://picsum.photos/seed/shawshank/400/600",
+      "backdrop": "https://picsum.photos/seed/shawshank-bg/1200/500",
+      "description": "Over the course of several years, two convicts form a friendship, seeking solace and eventual redemption through basic compassion.",
+      "trailer": "https://www.youtube.com/embed/6hB3S9bIaco",
+      "genre": [
+        "Drama"
+      ],
+      "rating": 9.3,
+      "duration": 142,
+      "releaseDate": "1994-10-14",
+      "status": "now_showing",
+      "director": "Frank Darabont",
+      "cast": [
+        "Tim Robbins",
+        "Morgan Freeman",
+        "Bob Gunton"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "The Godfather",
+      "poster": "https://picsum.photos/seed/godfather/400/600",
+      "backdrop": "https://picsum.photos/seed/godfather-bg/1200/500",
+      "description": "Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.",
+      "trailer": "https://www.youtube.com/embed/sY1S349gQ8U",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 9.2,
+      "duration": 175,
+      "releaseDate": "1972-03-24",
+      "status": "now_showing",
+      "director": "Francis Ford Coppola",
+      "cast": [
+        "Marlon Brando",
+        "Al Pacino",
+        "James Caan"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "The Dark Knight",
+      "poster": "https://picsum.photos/seed/darkknight/400/600",
+      "backdrop": "https://picsum.photos/seed/darkknight-bg/1200/500",
+      "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY",
+      "genre": [
+        "Action",
+        "Crime",
+        "Drama"
+      ],
+      "rating": 9.1,
+      "duration": 152,
+      "releaseDate": "2008-07-18",
+      "status": "now_showing",
+      "director": "Christopher Nolan",
+      "cast": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "The Godfather Part II",
+      "poster": "https://picsum.photos/seed/godfather2/400/600",
+      "backdrop": "https://picsum.photos/seed/godfather2-bg/1200/500",
+      "description": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+      "trailer": "https://www.youtube.com/embed/9O1Iy9od7-A",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 9,
+      "duration": 202,
+      "releaseDate": "1974-12-20",
+      "status": "now_showing",
+      "director": "Francis Ford Coppola",
+      "cast": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Robert Duvall"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "The Lord of the Rings: The Return of the King",
+      "poster": "https://picsum.photos/seed/lotr3/400/600",
+      "backdrop": "https://picsum.photos/seed/lotr3-bg/1200/500",
+      "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "trailer": "https://www.youtube.com/embed/r5X-hFf6Bwo",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "rating": 9,
+      "duration": 201,
+      "releaseDate": "2003-12-17",
+      "status": "now_showing",
+      "director": "Peter Jackson",
+      "cast": [
+        "Elijah Wood",
+        "Viggo Mortensen",
+        "Ian McKellen"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "12 Angry Men",
+      "poster": "https://picsum.photos/seed/12angrymen/400/600",
+      "backdrop": "https://picsum.photos/seed/12angrymen-bg/1200/500",
+      "description": "The jury in a New York City murder trial is frustrated by a single member whose reasonable doubt forces them to consider the evidence more carefully before jumping to a verdict.",
+      "trailer": "https://www.youtube.com/embed/_13J_9B5jEk",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 9,
+      "duration": 96,
+      "releaseDate": "1957-04-10",
+      "status": "now_showing",
+      "director": "Sidney Lumet",
+      "cast": [
+        "Henry Fonda",
+        "Lee J. Cobb",
+        "Martin Balsam"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Schindler's List",
+      "poster": "https://picsum.photos/seed/schindler/400/600",
+      "backdrop": "https://picsum.photos/seed/schindler-bg/1200/500",
+      "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.",
+      "trailer": "https://www.youtube.com/embed/gG22XNhtnoY",
+      "genre": [
+        "Biography",
+        "Drama",
+        "History"
+      ],
+      "rating": 9,
+      "duration": 195,
+      "releaseDate": "2026-09-10",
+      "status": "coming_soon",
+      "director": "Steven Spielberg",
+      "cast": [
+        "Liam Neeson",
+        "Ralph Fiennes",
+        "Ben Kingsley"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "The Lord of the Rings: The Fellowship of the Ring",
+      "poster": "https://picsum.photos/seed/lotr1/400/600",
+      "backdrop": "https://picsum.photos/seed/lotr1-bg/1200/500",
+      "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.",
+      "trailer": "https://www.youtube.com/embed/V75dMMIW2B4",
+      "genre": [
+        "Action",
+        "Adventure",
+        "Drama"
+      ],
+      "rating": 8.9,
+      "duration": 178,
+      "releaseDate": "2026-09-20",
+      "status": "coming_soon",
+      "director": "Peter Jackson",
+      "cast": [
+        "Elijah Wood",
+        "Ian McKellen",
+        "Orlando Bloom"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Pulp Fiction",
+      "poster": "https://picsum.photos/seed/pulpfiction/400/600",
+      "backdrop": "https://picsum.photos/seed/pulpfiction-bg/1200/500",
+      "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits meander together in four tales of violence and redemption.",
+      "trailer": "https://www.youtube.com/embed/s7EdQ4FqbhY",
+      "genre": [
+        "Crime",
+        "Drama"
+      ],
+      "rating": 8.8,
+      "duration": 154,
+      "releaseDate": "2026-10-05",
+      "status": "coming_soon",
+      "director": "Quentin Tarantino",
+      "cast": [
+        "John Travolta",
+        "Uma Thurman",
+        "Samuel L. Jackson"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The Good, the Bad and the Ugly",
+      "poster": "https://picsum.photos/seed/goodbadugly/400/600",
+      "backdrop": "https://picsum.photos/seed/goodbadugly-bg/1200/500",
+      "description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+      "trailer": "https://www.youtube.com/embed/WCN5JJY_wiA",
+      "genre": [
+        "Adventure",
+        "Western"
+      ],
+      "rating": 8.8,
+      "duration": 178,
+      "releaseDate": "2026-10-15",
+      "status": "coming_soon",
+      "director": "Sergio Leone",
+      "cast": [
+        "Clint Eastwood",
+        "Eli Wallach",
+        "Lee Van Cleef"
+      ]
+    }
+  ],
+  "cinemas": [
+    {
+      "id": 1,
+      "name": "CGV Vincom Center",
+      "location": "Quan 1, TP. Ho Chi Minh",
+      "image": "https://picsum.photos/seed/cgv/400/200"
+    },
+    {
+      "id": 2,
+      "name": "Lotte Cinema Landmark",
+      "location": "Quan Binh Thanh, TP. Ho Chi Minh",
+      "image": "https://picsum.photos/seed/lotte/400/200"
+    },
+    {
+      "id": 3,
+      "name": "Galaxy Cinema Nguyen Du",
+      "location": "Quan 1, TP. Ho Chi Minh",
+      "image": "https://picsum.photos/seed/galaxy/400/200"
+    }
+  ],
+  "showtimes": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "cinemaId": 1,
+      "date": "2026-08-23",
+      "time": "10:00",
+      "price": 80000,
+      "bookedSeats": [
+        "A3",
+        "A4",
+        "B5",
+        "C2",
+        "C3",
+        "D7",
+        "E1",
+        "F8",
+        "D4"
+      ]
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "cinemaId": 2,
+      "date": "2026-08-23",
+      "time": "14:30",
+      "price": 90000,
+      "bookedSeats": [
+        "A1",
+        "A2",
+        "B3",
+        "B4",
+        "D5",
+        "D6"
+      ]
+    },
+    {
+      "id": 3,
+      "movieId": 2,
+      "cinemaId": 1,
+      "date": "2026-08-23",
+      "time": "19:00",
+      "price": 95000,
+      "bookedSeats": [
+        "A5",
+        "B1",
+        "B2",
+        "C7",
+        "C8"
+      ]
+    },
+    {
+      "id": 4,
+      "movieId": 3,
+      "cinemaId": 1,
+      "date": "2026-08-23",
+      "time": "11:00",
+      "price": 85000,
+      "bookedSeats": [
+        "A1",
+        "B3",
+        "C5",
+        "D2",
+        "E8"
+      ]
+    },
+    {
+      "id": 5,
+      "movieId": 3,
+      "cinemaId": 3,
+      "date": "2026-08-23",
+      "time": "20:00",
+      "price": 100000,
+      "bookedSeats": [
+        "A1",
+        "A2",
+        "A3",
+        "B4",
+        "B5",
+        "C6",
+        "D7",
+        "E8"
+      ]
+    },
+    {
+      "id": 6,
+      "movieId": 4,
+      "cinemaId": 2,
+      "date": "2026-08-23",
+      "time": "15:30",
+      "price": 90000,
+      "bookedSeats": [
+        "B2",
+        "B3",
+        "C4"
+      ]
+    },
+    {
+      "id": 7,
+      "movieId": 5,
+      "cinemaId": 1,
+      "date": "2026-08-23",
+      "time": "16:00",
+      "price": 95000,
+      "bookedSeats": [
+        "A1",
+        "D4",
+        "D5",
+        "E6"
+      ]
+    },
+    {
+      "id": 8,
+      "movieId": 6,
+      "cinemaId": 3,
+      "date": "2026-08-23",
+      "time": "18:00",
+      "price": 75000,
+      "bookedSeats": [
+        "A2",
+        "C3",
+        "F1"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "User",
+      "email": "user@gmail.com",
+      "password": "123",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "123",
+      "role": "admin"
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "userId": 1,
+      "showtimeId": 1,
+      "movieId": 1,
+      "movieTitle": "The Shawshank Redemption",
+      "cinemaName": "CGV Vincom Center",
+      "date": "2026-08-23",
+      "time": "10:00",
+      "seats": [
+        "A3",
+        "A4"
+      ],
+      "totalPrice": 160000,
+      "bookingDate": "2026-08-22T10:30:00"
+    },
+    {
+      "userId": 3,
+      "showtimeId": 1,
+      "movieId": 1,
+      "movieTitle": "The Shawshank Redemption",
+      "cinemaName": "CGV Vincom Center",
+      "date": "2026-08-23",
+      "time": "10:00",
+      "seats": [
+        "D4"
+      ],
+      "totalPrice": 80000,
+      "bookingDate": "2026-08-22T10:37:14.550Z",
+      "id": 2
+    }
+  ]
+}
