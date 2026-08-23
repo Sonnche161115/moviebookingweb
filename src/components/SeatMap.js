@@ -12,16 +12,15 @@ const SeatMap = ({ bookedSeats = [], selectedSeats = [], onSeatClick }) => {
 
   return (
     <div className="text-center my-3">
-      <div className="cinema-screen-container">
-        <div className="cinema-screen"></div>
-        <div className="cinema-screen-text">Man hinh</div>
-      </div>
+      <div className="cinema-screen"></div>
+      <small className="text-secondary d-block mb-3">MAN HINH</small>
+
       <div className="d-inline-block">
         {rows.map((row) => (
           <div key={row} className="d-flex justify-content-center align-items-center mb-1">
-            <span className="fw-bold text-muted me-2" style={{ width: '18px' }}>{row}</span>
+            <span className="text-secondary me-2 fw-bold" style={{ width: '15px' }}>{row}</span>
             {cols.map((col) => {
-              const seatId = row + '' + col;
+              const seatId = row + col;
               const status = getSeatStatus(seatId);
               return (
                 <button
@@ -34,14 +33,15 @@ const SeatMap = ({ bookedSeats = [], selectedSeats = [], onSeatClick }) => {
                 </button>
               );
             })}
-            <span className="fw-bold text-muted ms-2" style={{ width: '18px' }}>{row}</span>
+            <span className="text-secondary ms-2 fw-bold" style={{ width: '15px' }}>{row}</span>
           </div>
         ))}
       </div>
-      <div className="seat-legend">
-        <div className="legend-item"><div className="legend-box available"></div><span>Trong</span></div>
-        <div className="legend-item"><div className="legend-box selected"></div><span>Dang chon</span></div>
-        <div className="legend-item"><div className="legend-box occupied"></div><span>Da ban</span></div>
+
+      <div className="d-flex justify-content-center gap-3 mt-3 small text-secondary">
+        <div><span className="d-inline-block seat-btn" style={{ width: '16px', height: '16px' }}></span> Trong</div>
+        <div><span className="d-inline-block seat-btn selected" style={{ width: '16px', height: '16px' }}></span> Dang chon</div>
+        <div><span className="d-inline-block seat-btn occupied" style={{ width: '16px', height: '16px' }}></span> Da ban</div>
       </div>
     </div>
   );

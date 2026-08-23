@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Form, InputGroup, Nav, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Form, ButtonGroup, Button, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 
@@ -17,7 +17,7 @@ const HomePage = () => {
 
   const filteredMovies = movies.filter(movie => {
     const matchesSearch = movie.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      movie.genre.some(g => g.toLowerCase().includes(searchTerm.toLowerCase()));
+      (movie.genre && movie.genre.some(g => g.toLowerCase().includes(searchTerm.toLowerCase())));
     if (activeTab === 'now_showing') return matchesSearch && movie.status === 'now_showing';
     if (activeTab === 'coming_soon') return matchesSearch && movie.status === 'coming_soon';
     return matchesSearch;
@@ -25,38 +25,35 @@ const HomePage = () => {
 
   return (
     <Container className="pb-5">
-      <div className="hero-banner">
-        <span className="badge bg-warning text-dark mb-2 px-3 py-2 fw-bold">IMDb Top 10</span>
-        <h1 className="fw-bold text-white mb-2">Phim Hay Nhat Moi Thoi Dai</h1>
-        <p className="text-secondary mb-0">Dat ve xem phim truc tuyen voi cac kiet tac IMDb.</p>
+      <div className="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+        <h4 className="fw-bold text-white mb-0">Danh sach phim</h4>
+        <div className="d-flex gap-2">
+          <ButtonGroup size="sm">
+            <Button variant={activeTab === 'all' ? 'warning' : 'outline-secondary'} onClick={() => setActiveTab('all')}>
+              Tat ca ({movies.length})
+            </Button>
+            <Button variant={activeTab === 'now_showing' ? 'warning' : 'outline-secondary'} onClick={() => setActiveTab('now_showing')}>
+              Dang chieu
+            </Button>
+            <Button variant={activeTab === 'coming_soon' ? 'warning' : 'outline-secondary'} onClick={() => setActiveTab('coming_soon')}>
+              Sap chieu
+            </Button>
+          </ButtonGroup>
+          <Form.Control
+            type="text"
+            size="sm"
+            placeholder="Tim kiem phim..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            style={{ width: '180px', backgroundColor: '#222', color: '#fff', borderColor: '#444' }}
+          />
+        </div>
       </div>
-
-      <Row className="align-items-center mb-4 g-3">
-        <Col md={6}>
-          <Nav variant="pills" activeKey={activeTab} onSelect={setActiveTab}>
-            <Nav.Item><Nav.Link eventKey="all" className="px-3 me-2 fw-bold">Tat ca ({movies.length})</Nav.Link></Nav.Item>
-            <Nav.Item><Nav.Link eventKey="now_showing" className="px-3 me-2 fw-bold">Dang chieu</Nav.Link></Nav.Item>
-            <Nav.Item><Nav.Link eventKey="coming_soon" className="px-3 fw-bold">Sap chieu</Nav.Link></Nav.Item>
-          </Nav>
-        </Col>
-        <Col md={6}>
-          <InputGroup>
-            <Form.Control
-              placeholder="Tim ten phim, the loai..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="imdb-search-input px-3"
-            />
-          </InputGroup>
-        </Col>
-      </Row>
 
       {loading ? (
         <div className="text-center py-5"><Spinner animation="border" variant="warning" /></div>
       ) : filteredMovies.length === 0 ? (
-        <div className="text-center py-5 bg-dark-card rounded-3">
-          <h5 className="text-white">Khong tim thay phim phu hop</h5>
-        </div>
+        <div className="text-center py-5 text-secondary">Khong tim thay phim phu hop.</div>
       ) : (
         <div className="movie-grid">
           {filteredMovies.map(movie => (
