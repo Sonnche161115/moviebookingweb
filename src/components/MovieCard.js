@@ -17,26 +17,13 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
         </div>
         <small className="text-secondary mb-2 text-truncate">{movie.genre ? movie.genre.join(', ') : ''}</small>
 
-        <div className="mt-auto d-grid gap-1">
-          <Button
-            variant="warning"
-            size="sm"
-            className="w-100 fw-bold"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigate('/booking/' + movie.id);
-            }}
-          >
-            Đặt Vé
-          </Button>
-
-          {isAdmin && (
-            <div className="d-flex gap-1 mt-1">
+        <div className="mt-auto">
+          {isAdmin ? (
+            <div className="d-flex gap-2">
               <Button
                 variant="outline-warning"
                 size="sm"
-                className="w-50 py-0"
-                style={{ fontSize: '0.75rem' }}
+                className="w-50 fw-bold"
                 onClick={(e) => {
                   e.stopPropagation();
                   onEdit(movie);
@@ -47,8 +34,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
               <Button
                 variant="outline-danger"
                 size="sm"
-                className="w-50 py-0"
-                style={{ fontSize: '0.75rem' }}
+                className="w-50 fw-bold"
                 onClick={(e) => {
                   e.stopPropagation();
                   onDelete(movie.id, movie.title);
@@ -57,6 +43,18 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
                 Xóa
               </Button>
             </div>
+          ) : (
+            <Button
+              variant="warning"
+              size="sm"
+              className="w-100 fw-bold"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate('/booking/' + movie.id);
+              }}
+            >
+              Đặt Vé
+            </Button>
           )}
         </div>
       </Card.Body>

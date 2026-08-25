@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Badge, Button, Spinner, Card } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../context/AuthContext';
 
 const MovieDetailPage = () => {
   const { id } = useParams();
+  const { isAdmin } = useContext(AuthContext);
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -55,7 +57,11 @@ const MovieDetailPage = () => {
             </div>
 
             <div>
-              {movie.status === 'now_showing' ? (
+              {isAdmin() ? (
+                <Button as={Link} to="/" variant="outline-warning" size="lg" className="w-100 fw-bold">
+                  Quay Lại Quản Lý Phim
+                </Button>
+              ) : movie.status === 'now_showing' ? (
                 <Button as={Link} to={'/booking/' + movie.id} variant="warning" size="lg" className="px-5 fw-bold text-dark w-100">
                   Đặt Vé Ngay
                 </Button>

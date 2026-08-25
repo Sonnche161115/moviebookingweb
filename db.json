@@ -270,7 +270,11 @@
       "date": "2026-08-23",
       "time": "19:00",
       "price": 95000,
-      "bookedSeats": []
+      "bookedSeats": [
+        "B4",
+        "B5",
+        "E7"
+      ]
     },
     {
       "id": 4,
@@ -341,5 +345,23 @@
       "id": 3
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "userId": 3,
+      "showtimeId": 3,
+      "movieId": 2,
+      "movieTitle": "The Godfather",
+      "cinemaName": "CGV Vincom Center",
+      "date": "2026-08-23",
+      "time": "19:00",
+      "seats": [
+        "B4",
+        "B5",
+        "E7"
+      ],
+      "totalPrice": 285000,
+      "bookingDate": "2026-08-25T04:17:37.136Z",
+      "id": 1
+    }
+  ]
 }
