@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+
+  const handleBookingClick = (e) => {
+    e.stopPropagation();
+    if (!user) {
+      navigate('/login');
+    } else {
+      navigate('/booking/' + movie.id);
+    }
+  };
 
   return (
     <Card className="movie-card h-100" style={{ cursor: 'pointer' }} onClick={() => navigate('/movie/' + movie.id)}>
@@ -48,10 +59,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
               variant="warning"
               size="sm"
               className="w-100 fw-bold"
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate('/booking/' + movie.id);
-              }}
+              onClick={handleBookingClick}
             >
               Đặt Vé
             </Button>

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Container, Row, Col, Badge, Button, Spinner, Card } from 'react-bootstrap';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
 
 const MovieDetailPage = () => {
   const { id } = useParams();
-  const { isAdmin } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { user, isAdmin } = useContext(AuthContext);
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,6 +22,14 @@ const MovieDetailPage = () => {
         setLoading(false);
       });
   }, [id]);
+
+  const handleBookingClick = () => {
+    if (!user) {
+      navigate('/login');
+    } else {
+      navigate('/booking/' + movie.id);
+    }
+  };
 
   if (loading) return <div className="text-center py-5"><Spinner animation="border" variant="warning" /></div>;
   if (!movie) return (
@@ -62,7 +71,7 @@ const MovieDetailPage = () => {
                   Quay Lại Quản Lý Phim
                 </Button>
               ) : movie.status === 'now_showing' ? (
-                <Button as={Link} to={'/booking/' + movie.id} variant="warning" size="lg" className="px-5 fw-bold text-dark w-100">
+                <Button variant="warning" size="lg" className="px-5 fw-bold text-dark w-100" onClick={handleBookingClick}>
                   Đặt Vé Ngay
                 </Button>
               ) : (

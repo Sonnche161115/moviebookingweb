@@ -18,6 +18,12 @@ const BookingPage = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    // Chuyển hướng về đăng nhập ngay nếu chưa đăng nhập
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
     Promise.all([
       axios.get('http://localhost:3001/movies/' + movieId),
       axios.get('http://localhost:3001/showtimes?movieId=' + movieId)
@@ -34,7 +40,7 @@ const BookingPage = () => {
         console.error(err);
         setLoading(false);
       });
-  }, [movieId]);
+  }, [movieId, user, navigate]);
 
   const handleSeatClick = (seatId) => {
     if (selectedSeats.includes(seatId)) {
@@ -46,7 +52,6 @@ const BookingPage = () => {
 
   const handleConfirmBooking = () => {
     if (!user) {
-      alert('Vui lòng đăng nhập để tiến hành đặt vé!');
       navigate('/login');
       return;
     }
