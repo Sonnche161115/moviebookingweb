@@ -23,9 +23,6 @@ const NavbarComponent = () => {
             {user && (
               <Nav.Link as={Link} to="/history" className="text-white me-2">Ve cua toi</Nav.Link>
             )}
-            {isAdmin() && (
-              <Nav.Link as={Link} to="/admin" className="text-warning fw-bold me-2">Quan ly phim</Nav.Link>
-            )}
           </Nav>
           <Nav className="align-items-center">
             {user ? (

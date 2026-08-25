@@ -8,7 +8,6 @@ import BookingPage from './pages/BookingPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import BookingHistoryPage from './pages/BookingHistoryPage';
-import AdminPage from './pages/AdminPage';
 import './App.css';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
               <Route path="/history" element={<BookingHistoryPage />} />
-              <Route path="/admin" element={<AdminPage />} />
             </Routes>
           </div>
           <footer className="bg-dark border-top border-secondary py-3 text-center text-secondary small mt-5">
