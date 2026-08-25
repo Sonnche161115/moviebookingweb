@@ -1,23 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Container, Row, Col, Badge, Button, Spinner, Card, Form } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col, Badge, Button, Spinner, Card } from 'react-bootstrap';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { AuthContext } from '../context/AuthContext';
 
 const MovieDetailPage = () => {
   const { id } = useParams();
-  const { user } = useContext(AuthContext);
   const [movie, setMovie] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [userScore, setUserScore] = useState(10);
-  const [hasRated, setHasRated] = useState(false);
-  const [ratingMessage, setRatingMessage] = useState('');
 
   useEffect(() => {
-    fetchMovie();
-  }, [id]);
-
-  const fetchMovie = () => {
     axios.get('http://localhost:3001/movies/' + id)
       .then(res => {
         setMovie(res.data);
@@ -27,28 +18,7 @@ const MovieDetailPage = () => {
         console.error(err);
         setLoading(false);
       });
-  };
-
-  const handleRateSubmit = (e) => {
-    e.preventDefault();
-    if (!user) return;
-
-    // Calculate new average rating
-    const currentRating = parseFloat(movie.rating) || 8.0;
-    const newRating = parseFloat(((currentRating * 10 + userScore) / 11).toFixed(1));
-
-    axios.patch('http://localhost:3001/movies/' + movie.id, {
-      rating: newRating
-    })
-      .then(() => {
-        setMovie({ ...movie, rating: newRating });
-        setHasRated(true);
-        setRatingMessage('Cam on ban da danh gia ' + userScore + '/10 sao cho phim nay!');
-      })
-      .catch(() => {
-        alert('Co loi xay ra khi gui danh gia!');
-      });
-  };
+  }, [id]);
 
   if (loading) return <div className="text-center py-5"><Spinner animation="border" variant="warning" /></div>;
   if (!movie) return (
@@ -85,37 +55,6 @@ const MovieDetailPage = () => {
             </div>
 
             <div>
-              {/* User Rating Box */}
-              <div className="p-3 mb-3 rounded bg-dark border border-secondary">
-                <h6 className="fw-bold text-warning mb-2">★ Danh gia phim nay</h6>
-                {user ? (
-                  hasRated ? (
-                    <div className="text-success small fw-bold">{ratingMessage}</div>
-                  ) : (
-                    <Form onSubmit={handleRateSubmit} className="d-flex align-items-center gap-2 flex-wrap">
-                      <span className="small text-light">Chon diem:</span>
-                      <Form.Select
-                        size="sm"
-                        value={userScore}
-                        onChange={(e) => setUserScore(parseInt(e.target.value))}
-                        style={{ width: '100px', backgroundColor: '#222', color: '#fff', borderColor: '#555' }}
-                      >
-                        {[10, 9, 8, 7, 6, 5, 4, 3, 2, 1].map(score => (
-                          <option key={score} value={score}>{score} sao ★</option>
-                        ))}
-                      </Form.Select>
-                      <Button type="submit" variant="warning" size="sm" className="fw-bold">
-                        Gui danh gia
-                      </Button>
-                    </Form>
-                  )
-                ) : (
-                  <small className="text-secondary">
-                    Vui long <Link to="/login" className="text-warning fw-bold text-decoration-none">Dang nhap</Link> de danh gia phim.
-                  </small>
-                )}
-              </div>
-
               {movie.status === 'now_showing' ? (
                 <Button as={Link} to={'/booking/' + movie.id} variant="warning" size="lg" className="px-5 fw-bold text-dark w-100">
                   Dat Ve Ngay

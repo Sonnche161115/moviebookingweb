@@ -16,7 +16,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
           <span className="text-warning fw-bold small flex-shrink-0">★ {movie.rating}</span>
         </div>
         <small className="text-secondary mb-2 text-truncate">{movie.genre ? movie.genre.join(', ') : ''}</small>
-        
+
         <div className="mt-auto d-grid gap-1">
           <Button
             variant="warning"
@@ -27,7 +27,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
               navigate('/booking/' + movie.id);
             }}
           >
-            Dat ve
+            Đặt Vé
           </Button>
 
           {isAdmin && (
@@ -42,7 +42,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
                   onEdit(movie);
                 }}
               >
-                Sua
+                Sửa
               </Button>
               <Button
                 variant="outline-danger"
@@ -54,7 +54,7 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
                   onDelete(movie.id, movie.title);
                 }}
               >
-                Xoa
+                Xóa
               </Button>
             </div>
           )}

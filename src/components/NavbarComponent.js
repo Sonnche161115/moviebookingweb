@@ -30,12 +30,12 @@ const NavbarComponent = () => {
                 <span className="text-warning me-3 small fw-bold">
                   {user.name} {isAdmin() ? '(Admin)' : ''}
                 </span>
-                <Button variant="outline-light" size="sm" onClick={handleLogout}>Dang xuat</Button>
+                <Button variant="outline-light" size="sm" onClick={handleLogout}>Đăng Xuất</Button>
               </>
             ) : (
               <>
-                <Button as={Link} to="/login" variant="outline-warning" size="sm" className="me-2">Dang nhap</Button>
-                <Button as={Link} to="/register" variant="warning" size="sm">Dang ky</Button>
+                <Button as={Link} to="/login" variant="outline-warning" size="sm" className="me-2">Đăng Nhập</Button>
+                <Button as={Link} to="/register" variant="warning" size="sm">Đăng Ký</Button>
               </>
             )}
           </Nav>

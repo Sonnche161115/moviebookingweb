@@ -383,6 +383,13 @@
       "email": "admin@gmail.com",
       "password": "123",
       "role": "admin"
+    },
+    {
+      "name": "Sơn",
+      "email": "son@gmail.com",
+      "password": "123",
+      "role": "user",
+      "id": 3
     }
   ],
   "bookings": [
