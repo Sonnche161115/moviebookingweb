@@ -17,7 +17,7 @@ const RegisterPage = () => {
     axios.get('http://localhost:3001/users?email=' + email)
       .then(res => {
         if (res.data.length > 0) {
-          setError('Email nay da duoc su dung!');
+          setError('Email này đã được sử dụng!');
         } else {
           return axios.post('http://localhost:3001/users', { name, email, password, role: 'user' });
         }
@@ -25,24 +25,24 @@ const RegisterPage = () => {
       .then(res => {
         if (res && res.data) {
           login(res.data);
-          alert('Dang ky thanh cong!');
+          alert('Đăng ký tài khoản thành công!');
           navigate('/');
         }
       })
-      .catch(() => setError('Da co loi xay ra!'));
+      .catch(() => setError('Đã có lỗi xảy ra!'));
   };
 
   return (
     <Container className="py-5" style={{ maxWidth: '420px' }}>
       <Card className="card-dark p-4">
-        <h3 className="text-warning text-center fw-bold mb-4">Dang Ky</h3>
+        <h3 className="text-warning text-center fw-bold mb-4">Đăng Ký</h3>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3">
-            <Form.Label className="text-white fw-bold">Ho va Ten</Form.Label>
+            <Form.Label className="text-white fw-bold">Họ và Tên</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Nhap ho ten cua ban"
+              placeholder="Nhập họ và tên của bạn"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -53,7 +53,7 @@ const RegisterPage = () => {
             <Form.Label className="text-white fw-bold">Email</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Nhap email cua ban"
+              placeholder="Nhập email của bạn"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -61,10 +61,10 @@ const RegisterPage = () => {
             />
           </Form.Group>
           <Form.Group className="mb-4">
-            <Form.Label className="text-white fw-bold">Mat khau</Form.Label>
+            <Form.Label className="text-white fw-bold">Mật Khẩu</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Nhap mat khau"
+              placeholder="Nhập mật khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -72,10 +72,10 @@ const RegisterPage = () => {
             />
           </Form.Group>
           <Button type="submit" variant="warning" className="w-100 py-2 mb-3">
-            Tao Tai Khoan
+            Tạo Tài Khoản
           </Button>
           <div className="text-center small text-secondary">
-            Da co tai khoan? <Link to="/login" className="text-warning fw-bold text-decoration-none">Dang nhap</Link>
+            Đã có tài khoản? <Link to="/login" className="text-warning fw-bold text-decoration-none">Đăng Nhập</Link>
           </div>
         </Form>
       </Card>

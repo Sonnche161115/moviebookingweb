@@ -15,20 +15,20 @@ const NavbarComponent = () => {
   return (
     <Navbar expand="lg" className="navbar sticky-top mb-4">
       <Container>
-        <Navbar.Brand as={Link} to="/" className="brand-logo me-3">IMDb</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className="brand-logo me-3">MovieBookingWeb</Navbar.Brand>
         <Navbar.Toggle aria-controls="main-nav" className="bg-secondary" />
         <Navbar.Collapse id="main-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="/" className="text-white fw-bold me-2">Trang chu</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-white fw-bold me-2">Trang Chủ</Nav.Link>
             {user && (
-              <Nav.Link as={Link} to="/history" className="text-white me-2">Ve cua toi</Nav.Link>
+              <Nav.Link as={Link} to="/history" className="text-white me-2">Vé Của Tôi</Nav.Link>
             )}
           </Nav>
           <Nav className="align-items-center">
             {user ? (
               <>
                 <span className="text-warning me-3 small fw-bold">
-                  {user.name} {isAdmin() ? '(Admin)' : ''}
+                  {user.name} {isAdmin() ? '(Quản Trị Viên)' : ''}
                 </span>
                 <Button variant="outline-light" size="sm" onClick={handleLogout}>Đăng Xuất</Button>
               </>

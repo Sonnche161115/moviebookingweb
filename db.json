@@ -260,8 +260,7 @@
         "C3",
         "D7",
         "E1",
-        "F8",
-        "D4"
+        "F8"
       ]
     },
     {
@@ -408,21 +407,6 @@
       ],
       "totalPrice": 160000,
       "bookingDate": "2026-08-22T10:30:00"
-    },
-    {
-      "userId": 3,
-      "showtimeId": 1,
-      "movieId": 1,
-      "movieTitle": "The Shawshank Redemption",
-      "cinemaName": "CGV Vincom Center",
-      "date": "2026-08-23",
-      "time": "10:00",
-      "seats": [
-        "D4"
-      ],
-      "totalPrice": 80000,
-      "bookingDate": "2026-08-22T10:37:14.550Z",
-      "id": 2
     }
   ]
 }

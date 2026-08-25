@@ -23,8 +23,8 @@ const MovieDetailPage = () => {
   if (loading) return <div className="text-center py-5"><Spinner animation="border" variant="warning" /></div>;
   if (!movie) return (
     <Container className="text-center py-5">
-      <h4 className="text-white">Khong tim thay phim</h4>
-      <Button as={Link} to="/" variant="warning" className="mt-3 fw-bold text-dark">Ve trang chu</Button>
+      <h4 className="text-white">Không Tìm Thấy Phim</h4>
+      <Button as={Link} to="/" variant="warning" className="mt-3 fw-bold text-dark">Về Trang Chủ</Button>
     </Container>
   );
 
@@ -38,30 +38,30 @@ const MovieDetailPage = () => {
           <Col md={8} className="p-4 d-flex flex-column justify-content-between">
             <div>
               <div className="d-flex align-items-center gap-2 mb-3">
-                <Badge bg="warning" text="dark" className="fs-6 px-3 py-2 fw-bold">IMDb ★ {movie.rating}</Badge>
+                <Badge bg="warning" text="dark" className="fs-6 px-3 py-2 fw-bold">Điểm ★ {movie.rating}</Badge>
                 {movie.genre && movie.genre.map((g, idx) => (
                   <Badge key={idx} bg="secondary" className="px-3 py-2">{g}</Badge>
                 ))}
               </div>
               <h2 className="fw-bold text-white mb-3">{movie.title}</h2>
               <p className="text-secondary mb-4">{movie.description}</p>
-              
+
               <div className="row g-3 mb-4 small text-light">
-                <div className="col-6 col-md-4"><span className="text-secondary">Dao dien:</span><br /><strong className="text-white">{movie.director || 'N/A'}</strong></div>
-                <div className="col-6 col-md-4"><span className="text-secondary">Thoi luong:</span><br /><strong className="text-white">{movie.duration} phut</strong></div>
-                <div className="col-6 col-md-4"><span className="text-secondary">Khoi chieu:</span><br /><strong className="text-white">{movie.releaseDate}</strong></div>
-                <div className="col-12"><span className="text-secondary">Dien vien:</span><br /><strong className="text-warning">{movie.cast ? movie.cast.join(', ') : 'N/A'}</strong></div>
+                <div className="col-6 col-md-4"><span className="text-secondary">Đạo diễn:</span><br /><strong className="text-white">{movie.director || 'N/A'}</strong></div>
+                <div className="col-6 col-md-4"><span className="text-secondary">Thời lượng:</span><br /><strong className="text-white">{movie.duration} phút</strong></div>
+                <div className="col-6 col-md-4"><span className="text-secondary">Khởi chiếu:</span><br /><strong className="text-white">{movie.releaseDate}</strong></div>
+                <div className="col-12"><span className="text-secondary">Diễn viên chính:</span><br /><strong className="text-warning">{movie.cast ? movie.cast.join(', ') : 'N/A'}</strong></div>
               </div>
             </div>
 
             <div>
               {movie.status === 'now_showing' ? (
                 <Button as={Link} to={'/booking/' + movie.id} variant="warning" size="lg" className="px-5 fw-bold text-dark w-100">
-                  Dat Ve Ngay
+                  Đặt Vé Ngay
                 </Button>
               ) : (
                 <Button variant="secondary" size="lg" disabled className="px-5 fw-bold w-100">
-                  Sap Chieu
+                  Phim Sắp Chiếu
                 </Button>
               )}
             </div>

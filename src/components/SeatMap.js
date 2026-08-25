@@ -13,7 +13,7 @@ const SeatMap = ({ bookedSeats = [], selectedSeats = [], onSeatClick }) => {
   return (
     <div className="text-center my-3">
       <div className="cinema-screen"></div>
-      <small className="text-secondary d-block mb-3">Màn Hình</small>
+      <small className="text-secondary d-block mb-3">MÀN HÌNH CHIẾU</small>
 
       <div className="d-inline-block">
         {rows.map((row) => (
@@ -41,7 +41,7 @@ const SeatMap = ({ bookedSeats = [], selectedSeats = [], onSeatClick }) => {
       <div className="d-flex justify-content-center gap-3 mt-3 small text-secondary">
         <div><span className="d-inline-block seat-btn" style={{ width: '16px', height: '16px' }}></span> Trống</div>
         <div><span className="d-inline-block seat-btn selected" style={{ width: '16px', height: '16px' }}></span> Đang Chọn</div>
-        <div><span className="d-inline-block seat-btn occupied" style={{ width: '16px', height: '16px' }}></span>Đã Bán</div>
+        <div><span className="d-inline-block seat-btn occupied" style={{ width: '16px', height: '16px' }}></span> Đã Bán</div>
       </div>
     </div>
   );
