@@ -4,6 +4,19 @@ import axios from 'axios';
 import MovieCard from '../components/MovieCard';
 import { AuthContext } from '../context/AuthContext';
 
+const AVAILABLE_GENRES = [
+  'Action',
+  'Drama',
+  'Crime',
+  'Adventure',
+  'Sci-Fi',
+  'Comedy',
+  'Animation',
+  'Horror',
+  'Romance',
+  'History'
+];
+
 const HomePage = () => {
   const { isAdmin } = useContext(AuthContext);
   const [movies, setMovies] = useState([]);
@@ -15,9 +28,17 @@ const HomePage = () => {
   const [editing, setEditing] = useState(null);
   const [modalError, setModalError] = useState('');
   const [form, setForm] = useState({
-    title: '', poster: '', description: '', trailer: '',
-    genre: '', rating: '', duration: '', releaseDate: '',
-    status: 'now_showing', director: '', cast: ''
+    title: '',
+    poster: '',
+    description: '',
+    trailer: '',
+    genre: [],
+    rating: '8.0',
+    duration: '120',
+    releaseDate: '2026-08-25',
+    status: 'now_showing',
+    director: '',
+    cast: ''
   });
 
   useEffect(() => {
@@ -41,9 +62,17 @@ const HomePage = () => {
   const handleOpenAdd = () => {
     setEditing(null);
     setForm({
-      title: '', poster: '', description: '', trailer: '',
-      genre: '', rating: '8.0', duration: '120', releaseDate: '2026-08-25',
-      status: 'now_showing', director: '', cast: ''
+      title: '',
+      poster: '',
+      description: '',
+      trailer: '',
+      genre: ['Action'],
+      rating: '8.0',
+      duration: '120',
+      releaseDate: '2026-08-25',
+      status: 'now_showing',
+      director: '',
+      cast: ''
     });
     setModalError('');
     setShowModal(true);
@@ -52,13 +81,28 @@ const HomePage = () => {
   const handleOpenEdit = (movie) => {
     setEditing(movie.id);
     setForm({
-      title: movie.title, poster: movie.poster, description: movie.description,
-      trailer: movie.trailer || '', genre: movie.genre ? movie.genre.join(', ') : '',
-      rating: movie.rating, duration: movie.duration, releaseDate: movie.releaseDate,
-      status: movie.status, director: movie.director || '', cast: movie.cast ? movie.cast.join(', ') : ''
+      title: movie.title,
+      poster: movie.poster,
+      description: movie.description,
+      trailer: movie.trailer || '',
+      genre: Array.isArray(movie.genre) ? movie.genre : (movie.genre ? movie.genre.split(', ') : []),
+      rating: movie.rating,
+      duration: movie.duration,
+      releaseDate: movie.releaseDate,
+      status: movie.status,
+      director: movie.director || '',
+      cast: movie.cast ? movie.cast.join(', ') : ''
     });
     setModalError('');
     setShowModal(true);
+  };
+
+  const handleGenreToggle = (g) => {
+    if (form.genre.includes(g)) {
+      setForm({ ...form, genre: form.genre.filter(item => item !== g) });
+    } else {
+      setForm({ ...form, genre: [...form.genre, g] });
+    }
   };
 
   const handleDelete = (id, title) => {
@@ -75,13 +119,24 @@ const HomePage = () => {
       setModalError('Vui lòng nhập tên phim và link poster!');
       return;
     }
+    if (form.genre.length === 0) {
+      setModalError('Vui lòng chọn ít nhất 1 thể loại phim!');
+      return;
+    }
+
     const movieData = {
-      title: form.title, poster: form.poster, backdrop: form.poster,
-      description: form.description, trailer: form.trailer,
-      genre: form.genre.split(',').map(g => g.trim()).filter(g => g),
-      rating: parseFloat(form.rating) || 0, duration: parseInt(form.duration) || 0,
-      releaseDate: form.releaseDate, status: form.status,
-      director: form.director, cast: form.cast.split(',').map(c => c.trim()).filter(c => c)
+      title: form.title,
+      poster: form.poster,
+      backdrop: form.poster,
+      description: form.description,
+      trailer: form.trailer,
+      genre: form.genre,
+      rating: parseFloat(form.rating) || 0,
+      duration: parseInt(form.duration) || 0,
+      releaseDate: form.releaseDate,
+      status: form.status,
+      director: form.director,
+      cast: form.cast.split(',').map(c => c.trim()).filter(c => c)
     };
 
     if (editing) {
@@ -172,20 +227,38 @@ const HomePage = () => {
               <Form.Label className="text-light">Link Trailer (YouTube Embed)</Form.Label>
               <Form.Control name="trailer" value={form.trailer} onChange={(e) => setForm({ ...form, trailer: e.target.value })} className="bg-dark text-white border-secondary" />
             </Form.Group>
+
+            {/* Cố định danh sách thể loại có sẵn */}
+            <Form.Group className="mb-3">
+              <Form.Label className="text-light d-block mb-2">Thể Loại Phim (Chọn từ danh sách có sẵn)</Form.Label>
+              <div className="d-flex flex-wrap gap-2 p-2 bg-dark rounded border border-secondary">
+                {AVAILABLE_GENRES.map((g) => {
+                  const isSelected = form.genre.includes(g);
+                  return (
+                    <Button
+                      key={g}
+                      type="button"
+                      size="sm"
+                      variant={isSelected ? 'warning' : 'outline-secondary'}
+                      className="px-3 py-1 fw-bold"
+                      style={{ fontSize: '0.8rem' }}
+                      onClick={() => handleGenreToggle(g)}
+                    >
+                      {isSelected ? '✓ ' : '+ '}{g}
+                    </Button>
+                  );
+                })}
+              </div>
+            </Form.Group>
+
             <div className="row g-3">
               <div className="col-md-6">
-                <Form.Group className="mb-3">
-                  <Form.Label className="text-light">Thể Loại (Ví dụ: Hành Động, Kịch Tính)</Form.Label>
-                  <Form.Control name="genre" value={form.genre} onChange={(e) => setForm({ ...form, genre: e.target.value })} className="bg-dark text-white border-secondary" />
-                </Form.Group>
-              </div>
-              <div className="col-md-3">
                 <Form.Group className="mb-3">
                   <Form.Label className="text-light">Điểm Đánh Giá</Form.Label>
                   <Form.Control type="number" step="0.1" name="rating" value={form.rating} onChange={(e) => setForm({ ...form, rating: e.target.value })} className="bg-dark text-white border-secondary" />
                 </Form.Group>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-6">
                 <Form.Group className="mb-3">
                   <Form.Label className="text-light">Thời Lượng (Phút)</Form.Label>
                   <Form.Control type="number" name="duration" value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} className="bg-dark text-white border-secondary" />
