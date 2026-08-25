@@ -21,7 +21,9 @@ const NavbarComponent = () => {
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/" className="text-white fw-bold me-2">Trang Chủ</Nav.Link>
             {user && (
-              <Nav.Link as={Link} to="/history" className="text-white me-2">Vé Của Tôi</Nav.Link>
+              <Nav.Link as={Link} to="/history" className={isAdmin() ? "text-warning fw-bold me-2" : "text-white me-2"}>
+                {isAdmin() ? "Quản Lý Vé" : "Vé Của Tôi"}
+              </Nav.Link>
             )}
           </Nav>
           <Nav className="align-items-center">
