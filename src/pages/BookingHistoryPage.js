@@ -21,7 +21,6 @@ const BookingHistoryPage = () => {
     }
 
     if (isAdmin()) {
-      // Admin: Lấy toàn bộ vé của tất cả khách hàng
       Promise.all([
         axios.get('http://localhost:3001/bookings'),
         axios.get('http://localhost:3001/users')
@@ -33,7 +32,6 @@ const BookingHistoryPage = () => {
         })
         .catch(() => setLoading(false));
     } else {
-      // User thường: Chỉ lấy vé của chính mình
       axios.get('http://localhost:3001/bookings?userId=' + user.id)
         .then(res => {
           setBookings(res.data);
@@ -57,7 +55,6 @@ const BookingHistoryPage = () => {
       return;
     }
 
-    // 1. Trả lại ghế trống trong showtimes
     axios.get('http://localhost:3001/showtimes/' + booking.showtimeId)
       .then(res => {
         const showtime = res.data;
@@ -67,7 +64,6 @@ const BookingHistoryPage = () => {
         });
       })
       .then(() => {
-        // 2. Xóa vé trong bookings
         return axios.delete('http://localhost:3001/bookings/' + booking.id);
       })
       .then(() => {
@@ -85,10 +81,9 @@ const BookingHistoryPage = () => {
   const filteredBookings = bookings.filter(b => {
     const search = filterSearch.toLowerCase();
     const movieMatch = b.movieTitle ? b.movieTitle.toLowerCase().includes(search) : false;
-    const cinemaMatch = b.cinemaName ? b.cinemaName.toLowerCase().includes(search) : false;
     const seatMatch = b.seats ? b.seats.join(', ').toLowerCase().includes(search) : false;
     const codeMatch = b.id ? b.id.toString().includes(search) : false;
-    return movieMatch || cinemaMatch || seatMatch || codeMatch;
+    return movieMatch || seatMatch || codeMatch;
   });
 
   const totalRevenue = bookings.reduce((sum, b) => sum + (b.totalPrice || 0), 0);
@@ -112,7 +107,7 @@ const BookingHistoryPage = () => {
           <Form.Control
             type="text"
             size="sm"
-            placeholder="Tìm theo tên phim, rạp, ghế, mã vé..."
+            placeholder="Tìm theo tên phim, ghế, mã vé..."
             value={filterSearch}
             onChange={(e) => setFilterSearch(e.target.value)}
             style={{ width: '280px', backgroundColor: '#222', color: '#fff', borderColor: '#444' }}
@@ -120,7 +115,6 @@ const BookingHistoryPage = () => {
         )}
       </div>
 
-      {/* Thống kê nhanh cho Quản trị viên */}
       {isAdmin() && (
         <Row className="g-3 mb-4">
           <Col sm={4}>
@@ -159,10 +153,7 @@ const BookingHistoryPage = () => {
             <Col key={b.id}>
               <Card className="card-dark h-100">
                 <Card.Header className="d-flex justify-content-between align-items-center bg-dark border-secondary">
-                  <div>
-                    <h6 className="fw-bold text-white mb-0">{b.movieTitle}</h6>
-                    <small className="text-secondary">{b.cinemaName}</small>
-                  </div>
+                  <h6 className="fw-bold text-white mb-0">{b.movieTitle}</h6>
                   <Badge bg="success">Đã Thanh Toán</Badge>
                 </Card.Header>
                 <Card.Body className="p-3 text-light">
