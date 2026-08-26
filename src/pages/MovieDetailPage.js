@@ -35,7 +35,7 @@ const MovieDetailPage = () => {
   if (!movie) return (
     <Container className="text-center py-5">
       <h4 className="text-white">Không Tìm Thấy Phim</h4>
-      <Button as={Link} to="/" variant="warning" className="mt-3 fw-bold text-dark">Về Trang Chủ</Button>
+      <Button as={Link} to="/home" variant="warning" className="mt-3 fw-bold text-dark">Về Trang Chủ</Button>
     </Container>
   );
 
@@ -67,7 +67,7 @@ const MovieDetailPage = () => {
 
             <div>
               {isAdmin() ? (
-                <Button as={Link} to="/" variant="outline-warning" size="lg" className="w-100 fw-bold">
+                <Button as={Link} to="/home" variant="outline-warning" size="lg" className="w-100 fw-bold">
                   Quay Lại Quản Lý Phim
                 </Button>
               ) : movie.status === 'now_showing' ? (

@@ -17,7 +17,7 @@ const LoginPage = () => {
       .then(res => {
         if (res.data.length > 0) {
           login(res.data[0]);
-          navigate('/');
+          navigate('/home');
         } else {
           setError('Email hoặc mật khẩu không chính xác!');
         }
@@ -35,7 +35,7 @@ const LoginPage = () => {
             <Form.Label className="text-white fw-bold">Email</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Nhập email của bạn (vd: user@gmail.com)"
+              placeholder="Nhập Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -46,7 +46,7 @@ const LoginPage = () => {
             <Form.Label className="text-white fw-bold">Mật Khẩu</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Nhập mật khẩu"
+              placeholder="Nhập Mật Khẩu"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -57,7 +57,7 @@ const LoginPage = () => {
             Đăng Nhập
           </Button>
           <div className="text-center small text-secondary">
-            Chưa có tài khoản? <Link to="/register" className="text-warning fw-bold text-decoration-none">Đăng Ký Ngay</Link>
+            Chưa Có Tài Khoản? <Link to="/register" className="text-warning fw-bold text-decoration-none">Đăng Ký Ngay</Link>
           </div>
         </Form>
       </Card>

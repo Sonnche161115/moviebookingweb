@@ -26,7 +26,7 @@ const RegisterPage = () => {
         if (res && res.data) {
           login(res.data);
           alert('Đăng ký tài khoản thành công!');
-          navigate('/');
+          navigate('/home');
         }
       })
       .catch(() => setError('Đã có lỗi xảy ra!'));

@@ -3,8 +3,8 @@
     {
       "id": 1,
       "title": "The Shawshank Redemption",
-      "poster": "https://picsum.photos/seed/shawshank/400/600",
-      "backdrop": "https://picsum.photos/seed/shawshank-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
       "description": "Hai người bạn tù hình thành một tình bạn sâu sắc qua nhiều năm tháng, tìm kiếm sự an ủi và sự cứu rỗi cuối cùng thông qua lòng trắc ẩn và niềm hy vọng mãnh liệt.",
       "trailer": "https://www.youtube.com/embed/6hB3S9bIaco",
       "genre": [
@@ -24,8 +24,8 @@
     {
       "id": 2,
       "title": "The Godfather",
-      "poster": "https://picsum.photos/seed/godfather/400/600",
-      "backdrop": "https://picsum.photos/seed/godfather-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/tmU7GeKVybMWF92PQopwcGezQq3.jpg",
       "description": "Ông trùm Vito Corleone, người đứng đầu một gia tộc mafia khét tiếng, quyết định chuyển giao quyền lực cho người con trai út Michael, vô tình đẩy gia đình vào những cuộc thanh trừng đẫm máu.",
       "trailer": "https://www.youtube.com/embed/sY1S349gQ8U",
       "genre": [
@@ -46,8 +46,8 @@
     {
       "id": 3,
       "title": "The Dark Knight",
-      "poster": "https://picsum.photos/seed/darkknight/400/600",
-      "backdrop": "https://picsum.photos/seed/darkknight-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg",
       "description": "Khi tên tội phạm nguy hiểm Joker gieo rắc sự hỗn loạn tại thành phố Gotham, Người Dơi Batman phải trải qua thử thách cam go nhất về cả thể xác lẫn tinh thần để bảo vệ công lý.",
       "trailer": "https://www.youtube.com/embed/EXeTwQWrcwY",
       "genre": [
@@ -69,8 +69,8 @@
     {
       "id": 4,
       "title": "The Godfather Part II",
-      "poster": "https://picsum.photos/seed/godfather2/400/600",
-      "backdrop": "https://picsum.photos/seed/godfather2-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/kGzFbGhp99zva6oZODq5atUfwqi.jpg",
       "description": "Bộ phim khắc họa thời trẻ của Vito Corleone tại New York vào những năm 1920, đồng thời theo chân người con trai Michael trong hành trình củng cố và mở rộng đế chế tội phạm của gia đình.",
       "trailer": "https://www.youtube.com/embed/9O1Iy9od7-A",
       "genre": [
@@ -91,8 +91,8 @@
     {
       "id": 5,
       "title": "The Lord of the Rings: The Return of the King",
-      "poster": "https://picsum.photos/seed/lotr3/400/600",
-      "backdrop": "https://picsum.photos/seed/lotr3-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
       "description": "Gandalf và Aragorn dẫn dắt liên minh loài người chống lại đại quân Sauron, tạo cơ hội cho Frodo và Sam tiến vào Núi Diệt Vong để tiêu hủy hoàn toàn Chiếc Nhẫn Quyền Năng.",
       "trailer": "https://www.youtube.com/embed/r5X-hFf6Bwo",
       "genre": [
@@ -114,8 +114,8 @@
     {
       "id": 6,
       "title": "12 Angry Men",
-      "poster": "https://picsum.photos/seed/12angrymen/400/600",
-      "backdrop": "https://picsum.photos/seed/12angrymen-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/qqHQsStV6Z9uhxww79rNx799du0.jpg",
       "description": "Một bồi thẩm đoàn gồm 12 người trong phiên tòa xét xử tội giết người phải đối mặt với những nghi ngờ hợp lý từ một thành viên, buộc họ phải thận trọng cân nhắc lại toàn bộ chứng cứ trước khi tuyên án.",
       "trailer": "https://www.youtube.com/embed/_13J_9B5jEk",
       "genre": [
@@ -136,8 +136,8 @@
     {
       "id": 7,
       "title": "Schindler's List",
-      "poster": "https://picsum.photos/seed/schindler/400/600",
-      "backdrop": "https://picsum.photos/seed/schindler-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/zb6fM1CX41D9rF9hdgclu0isU1.jpg",
       "description": "Trong bối cảnh Thế chiến II tại Ba Lan, nhà công nghiệp Oskar Schindler đã dũng cảm bảo vệ và cứu sống hơn một nghìn người Do Thái khỏi nạn diệt chủng tàn bạo của Đức Quốc Xã.",
       "trailer": "https://www.youtube.com/embed/gG22XNhtnoY",
       "genre": [
@@ -159,8 +159,8 @@
     {
       "id": 8,
       "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "poster": "https://picsum.photos/seed/lotr1/400/600",
-      "backdrop": "https://picsum.photos/seed/lotr1-bg/1200/500",
+      "poster": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28828_p_v8_ao.jpg",
+      "backdrop": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p28828_p_v8_ao.jpg",
       "description": "Một người Hobbit nhỏ bé từ vùng Shire cùng 8 người đồng hành dấn thân vào chuyến phiêu lưu đầy hiểm nguy nhằm phá hủy Chiếc Nhẫn Chúa và cứu thế giới Middle-earth khỏi Chúa tể Sauron.",
       "trailer": "https://www.youtube.com/embed/V75dMMIW2B4",
       "genre": [
@@ -182,8 +182,8 @@
     {
       "id": 9,
       "title": "Pulp Fiction",
-      "poster": "https://picsum.photos/seed/pulpfiction/400/600",
-      "backdrop": "https://picsum.photos/seed/pulpfiction-bg/1200/500",
+      "poster": "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+      "backdrop": "https://image.tmdb.org/t/p/original/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
       "description": "Cuộc sống của hai sát thủ mafia, một tay đấm bốc, một trùm xã hội đen cùng người vợ trẻ và hai tên cướp đan xen vào nhau trong chuỗi câu chuyện hài kịch đen đầy bất ngờ và kịch tính.",
       "trailer": "https://www.youtube.com/embed/s7EdQ4FqbhY",
       "genre": [
@@ -204,8 +204,8 @@
     {
       "id": 10,
       "title": "The Good, the Bad and the Ugly",
-      "poster": "https://picsum.photos/seed/goodbadugly/400/600",
-      "backdrop": "https://picsum.photos/seed/goodbadugly-bg/1200/500",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDwZ5Wq0J5d9U5riBqB26wU2_q19ag3518Rf_ySFuVjg&s=10",
+      "backdrop": "https://m.media-amazon.com/images/M/MV5BNjJlYmNkZGItM2NhYy00MGI5LTgzOTEtNjdjZmMyZDhkYWYxXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
       "description": "Một vụ lừa đảo tiền thưởng đã đưa hai gã cao bồi vào một liên minh bất đắc dĩ trong cuộc chạy đua sinh tử chống lại kẻ thứ ba để truy tìm kho báu vàng được chôn giấu bí mật.",
       "trailer": "https://www.youtube.com/embed/WCN5JJY_wiA",
       "genre": [
@@ -227,20 +227,20 @@
   "cinemas": [
     {
       "id": 1,
-      "name": "CGV Vincom Center",
-      "location": "Quan 1, TP. Ho Chi Minh",
+      "name": "Rạp 1",
+      "location": "Hà Nội",
       "image": "https://picsum.photos/seed/cgv/400/200"
     },
     {
       "id": 2,
-      "name": "Lotte Cinema Landmark",
-      "location": "Quan Binh Thanh, TP. Ho Chi Minh",
+      "name": "Rạp 2",
+      "location": "Huế",
       "image": "https://picsum.photos/seed/lotte/400/200"
     },
     {
       "id": 3,
-      "name": "Galaxy Cinema Nguyen Du",
-      "location": "Quan 1, TP. Ho Chi Minh",
+      "name": "Rạp 3",
+      "location": "Hồ Chí Minh",
       "image": "https://picsum.photos/seed/galaxy/400/200"
     }
   ],

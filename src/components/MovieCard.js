@@ -18,7 +18,15 @@ const MovieCard = ({ movie, isAdmin, onEdit, onDelete }) => {
 
   return (
     <Card className="movie-card h-100" style={{ cursor: 'pointer' }} onClick={() => navigate('/movie/' + movie.id)}>
-      <Card.Img variant="top" src={movie.poster} alt={movie.title} />
+      <Card.Img
+        variant="top"
+        src={movie.poster}
+        alt={movie.title}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src = 'https://picsum.photos/seed/' + movie.id + '/400/600';
+        }}
+      />
       <Card.Body className="p-2 d-flex flex-column">
         <div className="d-flex justify-content-between align-items-center mb-1">
           <strong className="text-truncate flex-grow-1 me-1" style={{ fontSize: '0.9rem' }} title={movie.title}>
